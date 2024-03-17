@@ -72,7 +72,7 @@ student_name_submit.addEventListener("click", (e) => {
   e.preventDefault();
   const student_name = document.querySelector("#student_name").value;
   localStorage.setItem("student", student_name);
-  window.location.href = "task.html";
+  window.location.href = "./task.html";
 });
 
 const submitted = JSON.parse(localStorage.getItem("submitted")) || null;

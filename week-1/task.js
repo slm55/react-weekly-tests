@@ -98,13 +98,13 @@ document.querySelector("#question_submit").addEventListener("click", (e) => {
   const group = localStorage.getItem("group") || null;
   if (!student) {
     alert("You should have selected your name!");
-    window.location.href = "index.html";
+    window.location.href = "./index.html";
     return;
   }
 
   if (!group) {
     alert("You should have selected your group!");
-    window.location.href = "index.html";
+    window.location.href = "./index.html";
     return;
   }
 
@@ -129,7 +129,7 @@ document.querySelector("#question_submit").addEventListener("click", (e) => {
     .then((students) => {
       if (students[0]) {
         alert("You have already submitted your answers!");
-        window.location.href = "index.html";
+        window.location.href = "./index.html";
         localStorage.setItem("submitted", JSON.stringify(true));
         return;
       } else {
@@ -145,7 +145,7 @@ document.querySelector("#question_submit").addEventListener("click", (e) => {
           })
           .then((answer) => {
             alert("Your answers were successfully submitted.");
-            window.location.href = "index.html";
+            window.location.href = "./index.html";
             e.target.innerText = "Submit";
             localStorage.setItem("submitted", JSON.stringify(true));
           })
