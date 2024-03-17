@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1 task</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../codemirror-5.65.16/lib/codemirror.css">
+    <link rel="stylesheet" href="../codemirror-5.65.16/addon/hint/show-hint.css">
+    <script src="../codemirror-5.65.16/lib/codemirror.js"></script>
+    <script src="../codemirror-5.65.16/mode/javascript/javascript.js"></script>
+    <script src="../codemirror-5.65.16/mode/jsx/jsx.js"></script>
+    <script src="../codemirror-5.65.16/mode/xml/xml.js"></script>
+    <script src="../codemirror-5.65.16/addon/edit/closebrackets.js"></script>
+    <script src="../codemirror-5.65.16/addon/edit/closetag.js"></script>
+    <script src="../codemirror-5.65.16/addon/hint/javascript-hint.js"></script>
+    <script src="../codemirror-5.65.16/addon/hint/show-hint.js"></script>
+    <link rel="stylesheet" href="../codemirror-5.65.16/theme/dracula.css">
+</head>
+
+<body>
+    <h1>Week 1 task</h1>
+    <div id="questions">
+        <div class="question">
+            <label id="q1" for="a1"></label>
+            <input type="text" name="a1" id="a1">
+        </div>
+
+        <div class="question">
+            <label id="q2" for="a2"></label>
+            <input type="text" name="a2" id="a2">
+        </div>
+
+        <div class="question">
+            <label id="q3" for="a3"></label>
+            <input type="text" name="a3" id="a3">
+        </div>
+
+        <div class="question">
+            <label id="q4" for="a4"></label>
+            <input type="text" name="a4" id="a4">
+        </div>
+
+        <div class="question">
+            <label id="q5" for="a5"></label>
+            <input type="text" name="a5" id="a5">
+        </div>
+
+        <div>
+            <label id="q6" for="a6"></label>
+            <br>
+            <code></code>
+            <br><br>
+            <textarea name="a6" id="a6" cols="30" rows="10"></textarea>
+        </div>
+
+        <div>
+            <label id="q7" for="a7"></label>
+            <br>
+            <code id="before_code"></code>
+            <br><br>
+            <textarea name="a7" id="a7" cols="50" rows="5" placeholder="Write your code here..."></textarea>
+            <br>
+            <code id="after_code"></code>
+        </div>
+        <button id="question_submit">Submit</button>
+        <div class="error"></div>
+    </div>
+
+    
+    <script src="./task.js"></script>
+</body>
+
+</html>

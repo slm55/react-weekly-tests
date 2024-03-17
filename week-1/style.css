@@ -1,0 +1,52 @@
+h1 {
+    width: 100%;
+    text-align: center;
+}
+
+body {
+    background-color: rgb(210, 247, 227);
+}
+
+#student_name_selection {
+    display: none;
+}
+
+#questions {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 60%;
+    margin: 30px auto;
+}
+
+#questions .question {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    border: 0.5px solid black;
+    padding: 10px;
+    background-color: white;
+}
+
+code {
+    font-weight: 500;
+}
+
+#questions input {
+    width: 40%;
+    font-size: larger;
+} 
+
+#questions label {
+    font-size: larger;
+}
+
+#questions button {
+    align-self: center;
+    border: 0.2px solid black;
+    padding: 10px 20px;
+    font-size: larger;
+    border-radius: 10px;
+    background-color: white;
+}

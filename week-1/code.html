@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../codemirror-5.65.16/lib/codemirror.css">
+    <script src="../codemirror-5.65.16/lib/codemirror.js"></script>
+    <script src="../codemirror-5.65.16/mode/javascript/javascript.js"></script>
+</head>
+<body>
+    <div>
+        <textarea name="" id="a6" cols="30" rows="10"></textarea>
+    </div>
+    
+</body>
+<script>
+
+const editor = CodeMirror.fromTextArea(document.querySelector("#a6"), {
+    lineNumbers: true,
+    extraKeys: {"Ctrl-Space": "autocomplete"},
+    mode: {name: "javascript", globalVars: true}
+});
+</script>
+</html>
