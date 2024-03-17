@@ -111,27 +111,49 @@ document.querySelector("#question_submit").addEventListener("click", (e) => {
   const studentAnswer = {
     answers: answers,
     student: student,
-    group: group
-  }
+    group: group,
+  };
 
-  fetch("https://65f5b6eb41d90c1c5e0a06aa.mockapi.io/answers", {
-    method: "POST",
+  const url = new URL("https://65f5b6eb41d90c1c5e0a06aa.mockapi.io/answers");
+  url.searchParams.append("student", student);
+
+  fetch(url, {
+    method: "GET",
     headers: { "content-type": "application/json" },
-    body: JSON.stringify(studentAnswer),
   })
     .then((res) => {
       if (res.ok) {
         return res.json();
       }
     })
-    .then((answer) => {
-        alert("Your answers were successfully submitted.")
+    .then((students) => {
+      if (students[0]) {
+        alert("You have already submitted your answers!");
         window.location.href = "index.html";
-        e.target.innerText = "Submit"
-        localStorage.setItem("submitted", JSON.stringify(true))
+        localStorage.setItem("submitted", JSON.stringify(true));
+        return;
+      } else {
+        fetch("https://65f5b6eb41d90c1c5e0a06aa.mockapi.io/answers", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(studentAnswer),
+        })
+          .then((res) => {
+            if (res.ok) {
+              return res.json();
+            }
+          })
+          .then((answer) => {
+            alert("Your answers were successfully submitted.");
+            window.location.href = "index.html";
+            e.target.innerText = "Submit";
+            localStorage.setItem("submitted", JSON.stringify(true));
+          })
+          .catch((error) => {
+            const errorBox = document.querySelector(".error");
+            errorBox.textContent = error.message;
+          });
+      }
     })
-    .catch((error) => {
-        const errorBox = document.querySelector(".error");
-        errorBox.textContent = error.message;
-    });
+    .catch((error) => {});
 });
